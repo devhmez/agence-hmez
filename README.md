@@ -32,7 +32,7 @@ Both demos are labelled as fictional in the UI, carry `noindex` metadata and hea
 - vinext, Vite and Wrangler for the Cloudflare Workers build
 - Vitest and Testing Library (24 unit and component tests)
 - Playwright with axe-core across Chromium, Firefox and WebKit
-- ESLint, Prettier, Lighthouse, GitHub Actions
+- ESLint, Prettier, Lighthouse
 
 ## Project structure
 
