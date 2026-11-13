@@ -2,7 +2,7 @@
 
 A French-language agency website for selling web design to beauty shops, parapharmacies and aesthetic clinics in Tunisia, bundled with two working demo sites that prospects can click through.
 
-![Agence Hmez social preview](public/social-preview.png)
+![Agence Hmez home page](docs/screenshot.jpg)
 
 ## What it does
 
