@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "agence-hmez",
+  "account_id": "107d865a52554f0aec3b0ee82dd061be",
+  "compatibility_date": "2026-09-18",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "vinext/server/fetch-handler",
+  "vars": {
+    "NEXT_PUBLIC_SITE_URL": "https://agence-hmez.hamza-dellai.workers.dev",
+    "PUBLIC_LAUNCH_READY": "false",
+    "CONTACT_DIRECT_ONLY": "true",
+  },
+  "assets": {
+    "directory": "dist/client",
+    "not_found_handling": "none",
+    "binding": "ASSETS",
+  },
+}

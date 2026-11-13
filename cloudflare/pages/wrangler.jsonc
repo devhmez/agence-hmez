@@ -1,0 +1,11 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "agence-hmez-address",
+  "pages_build_output_dir": "./public",
+  "compatibility_date": "2026-09-18",
+  "vars": {
+    "PUBLIC_SITE_URL": "https://agence-hmez.pages.dev",
+    "SOURCE_SITE_URL": "https://agence-hmez.hamza-dellai.workers.dev"
+  },
+  "services": [{ "binding": "AGENCE", "service": "agence-hmez" }],
+}

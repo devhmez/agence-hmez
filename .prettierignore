@@ -1,0 +1,11 @@
+node_modules
+.next
+dist
+.vinext
+.wrangler
+package-lock.json
+public
+src/app/icon.svg
+test-results
+playwright-report
+docs/audits

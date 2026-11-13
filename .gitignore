@@ -1,0 +1,22 @@
+node_modules/
+.next/
+.env*
+!.env.example
+.vercel/
+test-results/
+playwright-report/
+coverage/
+*.tsbuildinfo
+.DS_Store
+/dist/
+.vinext/
+.wrangler/
+.dev.vars*
+
+# Local scratch and unrelated generated files
+/output/
+/outputs/
+/tmp/
+/*.py
+docs/audits/*
+!docs/audits/.gitkeep

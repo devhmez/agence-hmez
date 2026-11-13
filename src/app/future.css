@@ -1,0 +1,1084 @@
+/* Agence Hmez — identité numérique et mouvements progressifs. */
+:root {
+  --paper: #080b14;
+  --ink: #eff3ff;
+  --accent: #a2a7ff;
+  --surface: #11182a;
+  --line: #ffffff24;
+  --muted: #aeb9d0;
+}
+body {
+  background: #080b14;
+}
+::selection {
+  background: #a2a7ff;
+  color: #080b14;
+}
+.future-shell {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+  overflow: clip;
+}
+.future-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background: #080b14;
+}
+.future-aurora {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  opacity: 0.65;
+  background: radial-gradient(circle, #6d47dc55, transparent 67%);
+  animation: future-drift 18s ease-in-out infinite alternate;
+}
+.future-aurora-one {
+  left: -280px;
+  top: -420px;
+}
+.future-aurora-two {
+  right: -300px;
+  top: 160px;
+  background: radial-gradient(circle, #26bdc94a, transparent 68%);
+  animation-delay: -9s;
+}
+.future-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#ffffff08 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(
+    ellipse at var(--pointer-x, 50%) var(--pointer-y, 25%),
+    #0009,
+    transparent 70%
+  );
+}
+.future-scroll-progress {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #ab9fff, #62e6e3);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 100;
+  pointer-events: none;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--sans);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 1.08;
+}
+h1 {
+  font-size: clamp(52px, 5.7vw, 88px);
+}
+h2 {
+  font-size: clamp(38px, 4vw, 60px);
+}
+h3 {
+  font-size: 26px;
+  letter-spacing: -0.04em;
+}
+em {
+  font-style: normal;
+  color: var(--accent);
+}
+.eyebrow {
+  color: #b8c4df;
+  font-size: 10px;
+  letter-spacing: 0.13em;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline-color: #9be9ed;
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #080b14da;
+  border-color: #ffffff17;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+.agency-logo,
+.clinic-logo,
+.beauty-logo {
+  font-family: var(--sans);
+  font-weight: 500;
+  letter-spacing: -0.08em;
+}
+.agency-logo {
+  font-size: 34px;
+}
+.agency-logo span {
+  color: var(--muted);
+}
+.agency-logo i {
+  font-size: 24px;
+  color: #9ee7e9;
+}
+.site-header nav {
+  gap: 27px;
+}
+.site-header nav a {
+  color: #d5def1;
+  transition: color 0.2s;
+}
+.site-header nav a:hover {
+  color: white;
+  text-decoration: none;
+}
+.nav-cta {
+  border: 1px solid #ffffff36;
+  border-radius: 30px;
+  padding: 8px 17px;
+  margin-left: 0;
+  background: #ffffff05;
+}
+.menu-toggle {
+  color: var(--ink);
+  border-radius: 8px;
+}
+.button {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(110deg, #c3b4ff, #86e6e9);
+  color: #0c1022;
+  font-weight: 500;
+  box-shadow: 0 0 30px #b5a2ff12;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    background 0.25s;
+}
+.button:hover {
+  background: linear-gradient(110deg, #d3c7ff, #adf1ef);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px #a195ff26;
+}
+.button span {
+  transition: transform 0.25s;
+}
+.button:hover span {
+  transform: translateX(4px);
+}
+.button-secondary {
+  background: #ffffff04;
+  color: #edf3ff;
+  border-color: #ffffff35;
+  box-shadow: none;
+}
+.button-secondary:hover {
+  background: #ffffff0c;
+  box-shadow: 0 8px 32px #0002;
+}
+.agency-hero {
+  padding-block: 100px 112px;
+  gap: 65px;
+  min-height: 740px;
+}
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  animation: future-enter 0.85s both;
+}
+.hero-copy h1 {
+  max-width: 670px;
+  font-size: clamp(58px, 5.6vw, 84px);
+  line-height: 1.05;
+}
+.hero-copy h1 em {
+  background: linear-gradient(110deg, #c6baff 10%, #8fe6e9 85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.hero-description {
+  max-width: 440px;
+  font-size: 15px;
+  line-height: 1.85;
+}
+.hero-note {
+  font-size: 11px;
+}
+.future-showcase {
+  position: relative;
+  min-width: 0;
+  padding-top: 30px;
+  padding-bottom: 45px;
+  perspective: 1400px;
+  animation: future-enter 1s 0.1s both;
+}
+.future-orbit {
+  position: absolute;
+  top: -45px;
+  left: -45px;
+  width: calc(100% + 90px);
+  aspect-ratio: 1;
+  border: 1px solid #a0a7ff28;
+  border-radius: 50%;
+  box-shadow:
+    0 0 90px #8470ff10,
+    inset 0 0 90px #8470ff0a;
+  animation: future-orbit 24s linear infinite;
+}
+.future-orbit::before {
+  content: "";
+  position: absolute;
+  top: 17%;
+  left: 11%;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #b4adff;
+  box-shadow: 0 0 25px #b4adff;
+}
+.hero-preview {
+  background: linear-gradient(145deg, #1b2235e8, #0e1528ef);
+  border: 1px solid #ffffff2e;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow:
+    0 25px 80px #0008,
+    0 0 45px #8975ff0c;
+  transform: rotateY(-8deg) rotateX(4deg) rotateZ(2deg);
+  animation: future-float 7s ease-in-out infinite;
+}
+.preview-topline {
+  color: #bcc7df;
+  font-size: 9px;
+  min-height: 26px;
+  padding: 0 5px 13px;
+  gap: 15px;
+}
+.future-browser-dots {
+  display: flex;
+  gap: 5px;
+}
+.future-browser-dots i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #8794b1;
+}
+.future-browser-dots i:nth-child(2) {
+  background: #b4a4ec;
+}
+.future-browser-dots i:nth-child(3) {
+  background: #6cb9bd;
+}
+.preview-browser {
+  display: block;
+  border: 1px solid #ffffff1c;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #121a2c;
+}
+.preview-art {
+  height: auto;
+  aspect-ratio: 16/10;
+}
+.preview-art img {
+  object-fit: cover;
+  object-position: top;
+}
+.preview-bottom {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: #dae3f7;
+  padding: 18px 16px;
+  gap: 12px;
+}
+.preview-bottom > span:last-child {
+  color: #aee9e4;
+  font-size: 24px;
+}
+.preview-caption {
+  color: #aeb9d0;
+  font-size: 9px;
+  padding: 14px 5px 0;
+}
+.future-floating-tag {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: absolute;
+  border: 1px solid #ffffff30;
+  background: linear-gradient(130deg, #1c233cf2, #10212cf0);
+  backdrop-filter: blur(16px);
+  padding: 15px 18px;
+  border-radius: 14px;
+  box-shadow: 0 15px 45px #0007;
+  font-size: 12px;
+  z-index: 2;
+}
+.future-floating-tag > span {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #bdacff16;
+  color: #bcafff;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+}
+.future-floating-tag small {
+  display: block;
+  color: #aeb9d0;
+  font-size: 9px;
+  margin-top: 3px;
+}
+.future-tag-one {
+  right: -14px;
+  top: 0;
+  animation: future-tag-drift 8s ease-in-out infinite;
+}
+.future-tag-two {
+  left: -28px;
+  bottom: 5px;
+  animation: future-tag-drift 8s -4s ease-in-out infinite;
+}
+.future-tag-two > span {
+  background: #83e4e616;
+  color: #8fe6e9;
+}
+.future-ticker {
+  overflow: hidden;
+  border-block: 1px solid #ffffff1a;
+  background: #ffffff02;
+  padding: 24px 0;
+}
+.future-ticker > div {
+  display: flex;
+  width: max-content;
+  animation: future-ticker 35s linear infinite;
+}
+.future-ticker-group {
+  display: flex;
+}
+.future-ticker-group > span {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 65px;
+  padding-right: 65px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: #b7c2dc;
+}
+.future-ticker-group i {
+  color: #aba6ff;
+  font-style: normal;
+  font-size: 24px;
+}
+.future-benefits-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+  align-items: start;
+}
+.future-benefits-heading .eyebrow {
+  max-width: 28ch;
+  padding-top: 10px;
+}
+.future-benefits-heading h2 {
+  width: 66%;
+}
+.future-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 55px;
+}
+.future-benefit-grid article {
+  padding: 30px;
+  border: 1px solid #ffffff20;
+  border-radius: 18px;
+  background: linear-gradient(130deg, #17203480, #0c132166);
+  position: relative;
+  transition:
+    transform 0.3s,
+    border-color 0.3s;
+}
+.future-benefit-grid article:hover {
+  transform: translateY(-7px);
+  border-color: #a3a0fa88;
+}
+.future-benefit-grid .index-number {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: #abb6cf;
+}
+.future-feature-icon {
+  width: 50px;
+  height: 50px;
+  background: #b4a4ff12;
+  border: 1px solid #b4a4ff33;
+  color: #c1b1ff;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+.future-benefit-grid h3 {
+  font-size: 25px;
+  max-width: 16ch;
+}
+.future-benefit-grid p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 18px;
+  line-height: 1.85;
+}
+.offer-section {
+  background: linear-gradient(135deg, #0e152788, #18163055);
+  border-block: 1px solid var(--line);
+}
+.offer-card,
+.form-card,
+.detail-panel {
+  border: 1px solid #ffffff2c;
+  border-radius: 22px;
+  background: linear-gradient(130deg, #172034bb, #0f1727bd);
+  box-shadow: 0 15px 50px #0003;
+}
+.price {
+  font-family: var(--sans);
+  font-size: 56px;
+  color: #eef2ff;
+}
+.section-description {
+  color: var(--muted);
+}
+.demo-card {
+  border: 1px solid #ffffff26;
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(140deg, #17203490, #101524bb);
+  transition:
+    transform 0.35s,
+    border-color 0.35s,
+    box-shadow 0.35s;
+}
+.demo-card:hover {
+  transform: translateY(-8px);
+  border-color: #8d88daaa;
+  box-shadow: 0 20px 70px #0005;
+}
+.demo-card-image {
+  height: 310px;
+}
+.demo-card-image img {
+  transition: transform 0.7s;
+}
+.demo-card:hover .demo-card-image img {
+  transform: scale(1.045);
+}
+.demo-card-copy h3 {
+  font-size: 34px;
+}
+.demo-card-copy p:not(.eyebrow) {
+  color: var(--muted);
+}
+.process-section {
+  background: #ffffff02;
+}
+.process-grid {
+  margin-top: 55px;
+  gap: 22px;
+}
+.process-grid article {
+  padding: 25px;
+  border: 1px solid #ffffff22;
+  border-radius: 16px;
+  background: #121a2c88;
+}
+.process-grid .index-number {
+  font-size: 34px;
+  font-family: var(--sans);
+  color: #b0a5f8;
+  margin-bottom: 40px;
+}
+.process-grid h3 {
+  font-size: 23px;
+}
+.faq-list {
+  border-top: 0;
+}
+.faq-list details {
+  margin-bottom: 12px;
+  background: #131b2c88;
+  border: 1px solid #ffffff20;
+  border-radius: 12px;
+  padding: 0 22px;
+  transition: background 0.2s;
+}
+.faq-list details[open] {
+  background: #20254099;
+}
+.faq-list summary {
+  padding: 22px 0;
+  color: #e4ebfa;
+}
+.faq-list summary > span {
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.final-cta,
+.clinic-final {
+  position: relative;
+  background:
+    radial-gradient(ellipse at center, #39256077, transparent 65%), #0d1221;
+  border-block: 1px solid var(--line);
+  padding-block: 95px;
+}
+.final-cta h2 {
+  font-family: var(--sans);
+}
+.site-footer {
+  background: #080b14;
+  border-top: 1px solid var(--line);
+}
+.site-footer p,
+.footer-bottom,
+.footer-links {
+  color: #abb7d0;
+}
+.footer-links a:hover {
+  color: #cfc5ff;
+}
+.page-intro p,
+.contact-aside > p,
+.detail-copy p,
+.legal > p,
+.step-hint {
+  color: var(--muted);
+}
+.contact-note {
+  border-color: var(--line);
+}
+.form-card {
+  padding: 32px;
+}
+input,
+textarea,
+select {
+  background: #0b1323;
+  border: 1px solid #ffffff35;
+  color: #eef3ff;
+  border-radius: 10px;
+  accent-color: #b1a1ff;
+  color-scheme: dark;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #96a4c0;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #a7a0ff;
+}
+input[type="checkbox"] {
+  background: #151c2d;
+}
+.field-error {
+  color: #ffaaa5;
+}
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: #ffaaa5;
+}
+.form-status {
+  background: #18372b;
+  color: #c7f4e0;
+}
+.form-status.error {
+  background: #482831;
+  color: #ffd0cb;
+  border-color: #ffaaa5;
+}
+.success-mark {
+  color: #a2e8d3;
+  border-color: #a2e8d3;
+}
+.booking-progress {
+  color: #b8c2d7;
+}
+.booking-progress li.active {
+  color: #bbb0ff;
+}
+.booking-progress li span {
+  border-color: #7a83a0;
+}
+.booking-progress li.active span {
+  background: #c4b6ff;
+  border-color: #c4b6ff;
+  color: #111624;
+}
+.review-list {
+  color: #e5ebf9;
+}
+.review-list dt,
+.edit-actions button {
+  color: #b7c7e3;
+}
+.draft-notice {
+  background: #291e3c;
+  border-color: #c8a6ff;
+  color: #e9d4ff !important;
+  border-radius: 12px;
+}
+.real-beauty-preview {
+  background: #111a2c;
+  border: 1px solid #ffffff32;
+  border-radius: 18px;
+  box-shadow: 0 25px 90px #0004;
+}
+.real-beauty-toolbar {
+  background: #192137;
+  color: #d4def1;
+}
+.real-beauty-poster > span {
+  background: linear-gradient(110deg, #c3b4ff, #86e6e9);
+  color: #0b1223;
+  border-radius: 12px;
+}
+.real-beauty-actions {
+  background: #111a2c;
+  color: #becde8;
+}
+.real-beauty-caption {
+  color: #aeb9d0;
+}
+.clinic-site {
+  --line: #ffffff24;
+  --muted: #aec9c8;
+  background: #080f16;
+}
+.clinic-header,
+.beauty-header {
+  background: #080f16df;
+}
+.demo-notice {
+  background: #172a30;
+  color: #c6e9e6;
+  border-color: #ffffff24;
+}
+.demo-notice a {
+  color: #bef5e8;
+}
+.clinic-hero-copy,
+.clinic-intro,
+.clinic-treatment-section {
+  background: transparent;
+}
+.clinic-hero h1 {
+  font-family: var(--sans);
+  font-size: clamp(50px, 5vw, 75px);
+  line-height: 1.1;
+}
+.clinic-hero-art,
+.showcase-image {
+  border-radius: 20px;
+  border: 1px solid #ffffff24;
+  overflow: hidden;
+}
+.clinic-hero-art {
+  margin: 35px 35px 35px 0;
+}
+.art-caption {
+  color: #e7f5ee;
+  background: #102328ed;
+  border-radius: 5px;
+  padding: 8px 12px;
+}
+.clinic-intro {
+  border-block: 1px solid #ffffff1a;
+  padding-block: 90px;
+}
+.clinic-intro p {
+  color: var(--muted);
+}
+.treatment-card {
+  border: 1px solid #ffffff24;
+  background: #102029;
+  border-radius: 16px;
+  overflow: hidden;
+  transition:
+    transform 0.3s,
+    border-color 0.3s;
+}
+.treatment-card:hover {
+  transform: translateY(-5px);
+  border-color: #7af2ce80;
+}
+.treatment-copy {
+  padding: 24px;
+}
+.treatment-copy p,
+.clinical-notice {
+  color: var(--muted);
+}
+.clinic-final em {
+  color: #91efce;
+}
+.beauty-site {
+  --paper: #100e18;
+  --ink: #fbf0fa;
+  --accent: #f9a6df;
+  --surface: #24182d;
+  --line: #ffffff28;
+  --muted: #c6b3cb;
+  background: #100e18;
+}
+.beauty-header {
+  background: #100e18;
+}
+.beauty-hero-copy {
+  background:
+    radial-gradient(ellipse at 0 0, #56305a88, transparent 75%), #171321;
+}
+.beauty-hero h1 {
+  font-family: var(--sans);
+  font-size: clamp(55px, 6vw, 85px);
+}
+.beauty-hero-note {
+  color: #c6b3cb;
+}
+.beauty-ribbon {
+  background: #1d162a;
+}
+.beauty-search input {
+  border-color: #ffffff40;
+  background: #171321;
+}
+.beauty-search input::placeholder {
+  color: #c6b3cb;
+}
+.beauty-filters button {
+  color: #ecd9ee;
+  border-color: #ffffff35;
+}
+.beauty-filters button[aria-pressed="true"] {
+  background: #f0b4e4;
+  color: #221429;
+  border-color: #f0b4e4;
+}
+.beauty-product-photo {
+  border-radius: 16px;
+}
+.beauty-product-photo > span {
+  background: #171321ee;
+  color: #fbf0fa;
+  border: 1px solid #ffffff25;
+  border-radius: 8px;
+}
+.beauty-product-info h3 {
+  font-size: 24px;
+}
+.beauty-product-info > p:not(.eyebrow) {
+  color: #c6b3cb;
+}
+.beauty-story-image {
+  border-radius: 20px;
+  overflow: hidden;
+}
+.beauty-final {
+  background:
+    radial-gradient(ellipse at top, #57285355, transparent 70%), #201629;
+}
+.beauty-dialog {
+  border-radius: 18px;
+  border-color: #ffffff40;
+  background: #171321;
+  color: #f6ecf6;
+}
+.beauty-dialog-close {
+  background: #171321;
+  border-color: #ffffff4a;
+  color: #f6ecf6;
+  border-radius: 8px;
+}
+.beauty-dialog-copy h2 {
+  font-size: 36px;
+}
+.beauty-dialog-copy .small-text {
+  color: #c6b3cb;
+}
+.beauty-dialog-copy .eyebrow {
+  color: #e7b6df;
+}
+.beauty-image-note {
+  color: #f6ecf6;
+  background: #261c2cee;
+}
+.future-reveal {
+  animation: future-enter 0.7s both;
+}
+@keyframes future-enter {
+  from {
+    opacity: 1;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes future-drift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(90px, 80px);
+  }
+}
+@keyframes future-float {
+  0%,
+  100% {
+    transform: rotateY(-8deg) rotateX(4deg) rotateZ(2deg) translateY(0);
+  }
+  50% {
+    transform: rotateY(-5deg) rotateX(2deg) rotateZ(1deg) translateY(-12px);
+  }
+}
+@keyframes future-tag-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+@keyframes future-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes future-ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 1100px) {
+  .site-header nav {
+    gap: 19px;
+  }
+  .hero-copy h1 {
+    font-size: 64px;
+  }
+  .agency-hero {
+    gap: 35px;
+  }
+  .future-floating-tag {
+    padding: 12px;
+  }
+  .future-tag-one {
+    right: -6px;
+  }
+  .future-tag-two {
+    left: -10px;
+  }
+}
+@media (max-width: 800px) {
+  .agency-hero {
+    min-height: auto;
+    padding-block: 65px 90px;
+    gap: 55px;
+  }
+  .hero-copy h1 {
+    font-size: clamp(54px, 8vw, 76px);
+  }
+  .future-showcase {
+    max-width: 580px;
+    margin-inline: auto;
+    width: 100%;
+    padding-inline: 8px;
+  }
+  .future-orbit {
+    left: -20px;
+    top: -10px;
+    width: calc(100% + 40px);
+  }
+  .hero-preview {
+    transform: none;
+  }
+  .future-tag-one {
+    right: 0;
+  }
+  .future-tag-two {
+    left: 0;
+    bottom: 0;
+  }
+  .future-benefits-heading {
+    display: block;
+  }
+  .future-benefits-heading h2 {
+    width: auto;
+  }
+  .future-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+  .future-feature-icon {
+    margin-bottom: 35px;
+  }
+  .future-benefit-grid h3 {
+    max-width: none;
+  }
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .site-header nav {
+    background: #0c1221f5;
+    backdrop-filter: blur(20px);
+  }
+  .clinic-hero-art {
+    margin: 0 22px 30px;
+  }
+  .form-card {
+    padding: 25px;
+  }
+  .beauty-header {
+    background: #100e18;
+  }
+}
+@media (max-width: 500px) {
+  .agency-hero {
+    padding-top: 50px;
+  }
+  .hero-copy h1 {
+    font-size: clamp(46px, 12vw, 58px);
+  }
+  .hero-description {
+    font-size: 14px;
+  }
+  .future-tag-one {
+    top: 8px;
+    font-size: 10px;
+  }
+  .future-tag-two {
+    font-size: 10px;
+  }
+  .future-floating-tag small {
+    font-size: 8px;
+  }
+  .preview-bottom {
+    font-size: 9px;
+  }
+  .future-floating-tag > span {
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+  }
+  .future-benefit-grid article {
+    padding: 25px;
+  }
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+  .process-grid .index-number {
+    margin-bottom: 25px;
+  }
+  .beauty-hero h1 {
+    font-size: 56px;
+  }
+  .real-beauty-poster > span {
+    border-radius: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .future-shell *,
+  .future-shell *::before,
+  .future-shell *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .future-reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .hero-preview {
+    transform: none;
+  }
+  .future-ticker > div {
+    width: auto;
+  }
+  .future-ticker-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+  .future-ticker-group > span {
+    font-size: 10px;
+    gap: 16px;
+    padding: 0 16px;
+  }
+  .future-ticker-group[aria-hidden="true"] {
+    display: none;
+  }
+  .future-benefit-grid article:hover,
+  .demo-card:hover,
+  .treatment-card:hover {
+    transform: none;
+  }
+}
+.future-floating-tag {
+  pointer-events: none;
+}
+.future-showcase:hover .hero-preview,
+.future-showcase:focus-within .hero-preview {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .beauty-product-photo:hover img,
+  .demo-card:hover .demo-card-image img,
+  .treatment-card:hover .treatment-photo {
+    transform: none;
+  }
+}
+
+.future-motion-control {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 70;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid rgba(190, 202, 255, 0.4);
+  border-radius: 999px;
+  background: #11182a;
+  color: #eff3ff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.future-shell[data-motion-paused="true"] *,
+.future-shell[data-motion-paused="true"] *::before,
+.future-shell[data-motion-paused="true"] *::after {
+  animation-play-state: paused !important;
+}
